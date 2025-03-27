@@ -13,7 +13,7 @@ import {
   attendanceCreateFormSchema,
   AttendanceCreateFormData,
 } from "@/types/forms";
-import { Attendance, DateOption } from "@/types/wrapper";
+import { AttendanceWithAvailabilities, DateOption } from "@/types/wrapper";
 import { toast } from "sonner";
 import { useEffect, useMemo, useState } from "react";
 import { Circle, Triangle, X, Trash2 } from "lucide-react";
@@ -30,7 +30,7 @@ import {
 type AttendanceFormProps = {
   dateOptions: DateOption[];
   groupId: string;
-  attendance?: Attendance;
+  attendance?: AttendanceWithAvailabilities;
   onClose: () => void;
   isUpdateMode: boolean;
 };
