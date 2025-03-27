@@ -6,9 +6,10 @@ import { LinkIcon } from "lucide-react";
 export default async function SharePage({
   params,
 }: {
-  params: { groupId: string };
+  params: Promise<{ groupId: string }>;
 }) {
-  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/group/${params.groupId}`;
+  const { groupId } = await params;
+  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/group/${groupId}`;
 
   return (
     <div className="max-w-2xl mx-auto p-4 space-y-6">
@@ -23,7 +24,7 @@ export default async function SharePage({
       </div>
 
       <Button asChild className="w-full ">
-        <a href={`/group/${params.groupId}`}>
+        <a href={`/group/${groupId}`}>
           <LinkIcon className="mr-2 h-4 w-4" />
           グループページへ移動
         </a>
