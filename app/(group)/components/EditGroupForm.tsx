@@ -145,12 +145,12 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">STEP1 日程候補</h2>
-            <p className="text-sm text-gray-600">
+            <h2 className="text-lg font-bold">STEP1 日程候補</h2>
+            <p className="text-xs text-gray-600">
               カレンダーから日付を選択すると、日程候補に追加されます。
             </p>
             {form.formState.errors.dateOptions && (
-              <p className="text-red-500 text-sm">
+              <p className="text-red-500 text-xs">
                 {form.formState.errors.dateOptions.message}
               </p>
             )}
@@ -186,26 +186,24 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">STEP2 イベント名</h2>
+            <h2 className="text-lg font-bold">STEP2 イベント名</h2>
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>イベント名</FormLabel>
+                  <FormLabel className="text-sm">イベント名</FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="例: たくみの送別会！" />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">
-              STEP3 メンバーのみんなに一言！ (任意)
-            </h2>
+            <h2 className="text-lg font-bold">STEP3 一言コメント (任意)</h2>
             <FormField
               control={form.control}
               name="memo"
@@ -215,10 +213,10 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
                     <textarea
                       {...field}
                       placeholder="例: 楽しもう"
-                      className="w-full p-2 border rounded-md"
+                      className="w-full p-2 border rounded-md text-sm"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -237,8 +235,8 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
           </Button>
 
           <div className="space-y-4 my-6">
-            <h2 className="text-xl font-bold">イベントを削除する</h2>
-            <p className="text-sm text-gray-600">
+            <h2 className="text-lg font-bold">イベントを削除する</h2>
+            <p className="text-xs text-gray-600">
               ※一度削除すると復旧はできません。ご注意ください
             </p>
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -249,8 +247,10 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>本当に削除してよろしいですか？</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-lg">
+                    本当に削除してよろしいですか？
+                  </DialogTitle>
+                  <DialogDescription className="text-sm">
                     一度イベントを削除すると、そのイベントを復旧させることはできません。
                     <br />
                     本当にこのイベントを削除する場合は、『イベントを削除する』ボタンを押して下さい。
@@ -315,7 +315,7 @@ const SortableListItem = ({
       <Input
         value={option.when}
         onChange={(e) => onUpdate(e.target.value)}
-        className="flex-1"
+        className="flex-1 text-sm"
       />
       <Button
         type="button"

@@ -31,17 +31,17 @@ export default function Landing() {
         custom={0}
         variants={fadeInVariant}
       >
-        <div className="max-w-4xl mx-auto space-y-6 ">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight ">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
             『飲み会、いつする？』
           </h1>
           <br />
-          <h1 className="text-2xl md:text-4xl font-bold tracking-tight md:px-20 ">
+          <h1 className="text-xl md:text-3xl font-bold tracking-tight md:px-20">
             「幹事くん」で 複数人のイベントの日程がパッと決まる！
           </h1>
           <br />
           <EventMarquee />
-          <p className="text-xl font-medium text-[#ECF0F1]">
+          <p className="text-lg font-medium text-[#ECF0F1]">
             会員登録不要・無料で使える
             <br />
             シンプルで直感的なスケジュール管理ツール
@@ -49,7 +49,7 @@ export default function Landing() {
           <Button asChild className="h-12 px-8 text-lg rounded-full">
             <Link href="/new">新しいイベントを作る</Link>
           </Button>
-          <p className="text-sm text-[#BDC3C7]">
+          <p className="text-xs text-[#BDC3C7]">
             スマホ・PC・ガラケー対応 | アプリ不要 | すぐ始められる
           </p>
         </div>
@@ -63,13 +63,13 @@ export default function Landing() {
         custom={0.2}
         variants={fadeInVariant}
       >
-        <h2 className="text-3xl font-bold text-center text-[#2C3E50]">
+        <h2 className="text-2xl font-bold text-center text-[#2C3E50]">
           会議からイベントまで、幅広いシーンで大活躍！
         </h2>
-        <p className="text-center text-gray-600">
+        <p className="text-center text-gray-600 text-sm">
           幹事くんは急な予定調整から大人数のイベントまで対応。手間なくスムーズに！
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+        <div className="grid grid-cols-4 md:grid-cols-4 gap-4 px-4">
           {scenarios.map((image, index) => (
             <motion.div
               key={index}
@@ -99,27 +99,27 @@ export default function Landing() {
         custom={0.4}
         variants={fadeInVariant}
       >
-        <h2 className="text-3xl font-bold text-center text-[#2C3E50]">
+        <h2 className="text-2xl font-bold text-center text-[#2C3E50]">
           幹事くんの3ステップで簡単管理
         </h2>
-        <p className="text-center text-gray-600">
+        <p className="text-center text-gray-600 text-sm">
           URL共有でメンバーを招待、出欠を自動集計。幹事の負担を大幅軽減！
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<CalendarCheck className="w-12 h-12 text-[#2C3E50]" />}
+            icon={<CalendarCheck className="w-10 h-10 text-[#2C3E50]" />}
             title="1. 日程候補を作成"
             description="直感的なインターフェースで簡単入力。スマホでもPCでもサクサク操作。"
             customDelay={0.5}
           />
           <FeatureCard
-            icon={<Share2 className="w-12 h-12 text-[#2C3E50]" />}
+            icon={<Share2 className="w-10 h-10 text-[#2C3E50]" />}
             title="2. メンバーを招待"
             description="URLをコピーして共有。登録不要で誰でもすぐ参加可能。"
             customDelay={0.6}
           />
           <FeatureCard
-            icon={<Smile className="w-12 h-12 text-[#2C3E50]" />}
+            icon={<Smile className="w-10 h-10 text-[#2C3E50]" />}
             title="3. 結果を確認"
             description="出欠を自動集計。コメントも見れて全体の意向が一目でわかる。"
             customDelay={0.7}
@@ -134,8 +134,8 @@ export default function Landing() {
         custom={0}
         variants={fadeInVariant}
       >
-        <div className="max-w-lg mx-auto text-center space-y-6 mb-10 ">
-          <h1 className="text-3xl md:text-5xl font-semibold">
+        <div className="max-w-lg mx-auto text-center space-y-6 mb-10">
+          <h1 className="text-2xl md:text-4xl font-semibold">
             さっそく、楽しいイベントをはじめましょう
           </h1>
           <Button asChild className="h-12 px-8 text-lg rounded-full my-6">
@@ -177,7 +177,7 @@ const FeatureCard = ({ icon, title, description, customDelay }: CardProps) => (
     variants={fadeInVariant}
   >
     <div className="mb-4">{icon}</div>
-    <h3 className="text-xl font-bold mb-2 text-[#2C3E50]">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <h3 className="text-lg font-bold mb-2 text-[#2C3E50]">{title}</h3>
+    <p className="text-gray-600 text-sm">{description}</p>
   </motion.div>
 );

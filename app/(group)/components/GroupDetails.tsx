@@ -43,8 +43,8 @@ export default function GroupDetails({
                 href={`/group/${group.id}/edit`}
                 className="flex items-center gap-1"
               >
-                <Pencil className="w-4 h-4" />
                 <span>イベント管理（幹事用）</span>
+                <Pencil className="w-4 h-4" />
               </Link>
             </Button>
           </div>
