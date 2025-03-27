@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Attendance, DateOption, Group } from "@/types/wrapper";
+import {
+  AttendanceWithAvailabilities,
+  DateOption,
+  Group,
+} from "@/types/wrapper";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Pencil, Users } from "lucide-react";
@@ -8,7 +12,7 @@ import EventMarquee from "@/app/components/EventMarquee";
 type GroupDetailsProps = {
   group: Group;
   dateOptions: DateOption[];
-  attendances: Attendance[];
+  attendances: AttendanceWithAvailabilities[];
 };
 
 export default function GroupDetails({
