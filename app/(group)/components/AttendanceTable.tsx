@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { Attendance, DateOption } from "@/types/wrapper";
+import { AttendanceWithAvailabilities, DateOption } from "@/types/wrapper";
 import { Circle, Triangle, X, User } from "lucide-react";
 
 type AttendanceTableProps = {
-  attendances: Attendance[];
+  attendances: AttendanceWithAvailabilities[];
   dateOptionsWithPoints: (DateOption & { points: number })[];
   topTwoPoints: number[];
   onNameClick: (attendanceId: string) => void;
