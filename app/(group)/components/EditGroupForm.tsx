@@ -50,6 +50,7 @@ import { GroupUpdateFormData, groupUpdateFormSchema } from "@/types/forms";
 import { formatJapaneseDate } from "@/lib/date";
 import { GroupWithDetails } from "@/types/wrapper";
 import { deleteGroupFromLocalStorage } from "@/lib/localStorage";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
   const router = useRouter();
@@ -133,7 +134,7 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
       await deleteGroup(group.id);
       deleteGroupFromLocalStorage(group.id);
       toast.success("グループを削除しました");
-      setIsDialogOpen(false); // ダイアログを閉じる
+      setIsDialogOpen(false);
       router.push(`/delete`);
     } catch {
       toast.error("グループ削除に失敗しました");
@@ -210,11 +211,7 @@ export default function EditGroupForm({ group }: { group: GroupWithDetails }) {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <textarea
-                      {...field}
-                      placeholder="例: 楽しもう"
-                      className="w-full p-2 border rounded-md text-sm"
-                    />
+                    <Textarea {...field} placeholder="例: 楽しもう" />
                   </FormControl>
                   <FormMessage className="text-xs" />
                 </FormItem>

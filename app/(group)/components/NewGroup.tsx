@@ -42,6 +42,7 @@ import { toast } from "sonner";
 import { formatJapaneseDate } from "@/lib/date";
 import { Trash2 } from "lucide-react";
 import LocalStorageGroupList from "@/app/components/LocalStorageGroupList";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function NewGroupPage() {
   const router = useRouter();
@@ -194,11 +195,7 @@ export default function NewGroupPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <textarea
-                        {...field}
-                        placeholder="例: 楽しもう"
-                        className="w-full p-2 border rounded-md text-sm"
-                      />
+                      <Textarea {...field} placeholder="例: 楽しもう" />
                     </FormControl>
                     <FormMessage className="text-xs" />
                   </FormItem>
