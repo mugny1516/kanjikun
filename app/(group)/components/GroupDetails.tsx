@@ -25,7 +25,7 @@ export default function GroupDetails({
     <>
       <EventMarquee />
       {group.final_date && (
-        <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-4 py-1 rounded-xl text-xl mt-20 font-bold ">
+        <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-4 py-1 rounded-xl text-xs mt-20 font-bold ">
           {group.final_date} 開催確定 🎉
         </span>
       )}

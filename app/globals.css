@@ -81,7 +81,7 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
-/* .dark {
+.dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -113,14 +113,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-} */
+}
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/100;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
     font-family: "Zen Maru Gothic", sans-serif;
   }
 }
@@ -133,6 +133,7 @@
   padding: 20px;
   font-family: "Zen Maru Gothic", sans-serif !important;
   font-weight: bold;
+  font-size: 0.8rem;
   border: 1px solid #dae6f6 !important;
 }
 
@@ -146,16 +147,16 @@
 
 /* 月タイトル */
 .react-calendar__navigation span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
+
 /* ナビゲーションボタン（前月・次月） */
 .react-calendar__navigation button {
   background: #5382b1ed !important;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: 0.3s;
   border: none;
-  background: #5382b1ed !important;
   cursor: pointer;
 }
 
@@ -168,7 +169,7 @@
 /* 曜日ヘッダー */
 .react-calendar__month-view__weekdays {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #2c5282;
   font-weight: bold;
   display: flex;
@@ -179,7 +180,7 @@
 /* 曜日ラベル */
 .react-calendar__month-view__weekdays__weekday {
   text-align: center;
-  font-size: medium !important;
+  font-size: 0.8rem !important;
 }
 
 /* 選択可能な全ての日（通常時） */
@@ -188,9 +189,9 @@
   color: white !important;
   border: 1px solid white !important;
   border-radius: 4px !important;
-  /* transition: transform 0.2s ease-in-out, background 0.3s ease-in-out; */
-  padding: 10px;
+  padding: 8px;
   text-align: center;
+  font-size: 0.8rem;
 }
 
 /* 選択中 */
